@@ -1,0 +1,622 @@
+/* Global Reset & Variables */
+:root {
+    --navy: #0A192F;
+    --gold: #C5A059;
+    --white: #FFFFFF;
+    --off-white: #F8F9FA;
+    --text-gray: #555;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--navy);
+    background-color: var(--white);
+}
+
+/* Navbar Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: var(--navy);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--off-white);
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    position: relative; /* Required for the underline position */
+    padding-bottom: 5px;
+    transition: var(--transition);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--gold);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--gold);
+}
+
+.nav-links a:hover::after, 
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+.hero {
+    overflow: hidden; /* Contains the zoom */
+    position: relative;
+    height: 80vh;
+    background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
+                url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2070') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 10%;
+    animation: slowZoom 20s infinite alternate;
+}
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.gold-text {
+    color: var(--gold);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+}
+
+/* Buttons */
+.btn {
+    padding: 1rem 2.2rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+    display: inline-block;
+    margin: 0 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.btn-primary:hover {
+    background: #d4af37;
+    transform: translateY(-5px); /* Moves button up */
+    box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3); /* Gold glow */
+}
+
+.btn-secondary {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.btn-secondary:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Mission Section */
+.mission {
+    padding: 5rem 10%;
+    text-align: center;
+    background: var(--off-white);
+}
+
+.mission h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.mission p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-gray);
+}
+
+footer {
+    padding: 2rem;
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+
+@keyframes slowZoom {
+    from { background-size: 100%; }
+    to { background-size: 110%; }
+}
+
+/* Smooth reveal animation for text */
+.hero-content {
+    animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Page Header Section */
+.page-header {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 10%;
+    border-bottom: 4px solid var(--gold);
+}
+
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: var(--gold);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Course Grid Layout */
+.container {
+    padding: 80px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Course Card Design */
+.course-card {
+    background: var(--off-white);
+    padding: 40px;
+    border: 1px solid #eee;
+    transition: all 0.4s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.course-tag {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.course-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--navy);
+}
+
+.course-card p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Course Meta Data */
+.course-meta {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--navy);
+}
+/* Admission Specific Layout */
+.admission-section {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--gold);
+    margin: 15px auto;
+}
+
+/* Luxury Table Styling */
+.luxury-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.luxury-table th {
+    background: var(--navy);
+    color: var(--gold);
+    padding: 20px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.luxury-table td {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+.luxury-table tr:hover {
+    background: var(--off-white);
+}
+
+/* Steps Grid */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.step-card {
+    padding: 40px;
+    background: var(--navy);
+    color: var(--white);
+    border-top: 4px solid var(--gold);
+    transition: var(--transition);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-num {
+    display: block;
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
+
+.step-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+/* Faculty Grid Layout */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+/* Faculty Card Design */
+.faculty-card {
+    background: var(--white);
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.faculty-card:hover {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-color: var(--gold);
+}
+
+.faculty-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.faculty-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.faculty-card:hover .faculty-image img {
+    transform: scale(1.05);
+}
+
+.faculty-info {
+    padding: 30px;
+}
+
+.designation {
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.faculty-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.specialization {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.office-hours {
+    background: var(--off-white);
+    padding: 15px;
+    border-left: 3px solid var(--gold);
+}
+
+.office-hours strong {
+    font-size: 0.8rem;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.office-hours p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+/* Contact Layout */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    background: var(--white);
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form-container {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.info-item {
+    margin-bottom: 30px;
+}
+
+.info-item h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+/* Luxury Form Styling */
+.luxury-form .form-group {
+    margin-bottom: 25px;
+}
+
+.luxury-form label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--navy);
+}
+
+.luxury-form input, 
+.luxury-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background: var(--off-white);
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition);
+}
+
+.luxury-form input:focus, 
+.luxury-form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: var(--white);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}
+/* Research Page Layout */
+.research-intro {
+    margin-bottom: 100px;
+}
+
+.areas-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.area-item {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.area-icon {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    opacity: 0.6;
+    line-height: 1;
+}
+
+.area-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.area-text p {
+    color: var(--text-gray);
+}
+
+/* Labs Grid */
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.lab-card {
+    background: var(--navy);
+    color: var(--white);
+    padding: 50px 40px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.lab-card.gold-border {
+    border-top: 5px solid var(--gold);
+}
+
+.lab-card:hover {
+    background: #112240;
+    transform: translateY(-5px);
+}
+
+.lab-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--gold);
+}
+
+.lab-card p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.lab-lead {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--white);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 15px;
+    display: block;
+}

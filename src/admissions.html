@@ -3,9 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admissions | Department of Computer Science</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>Admissions Page</p>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">UNI<span>CS</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="admissions.html" class="active">Admissions</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Join the Vanguard</h1>
+        <p>Admission criteria and application process for Fall 2026.</p>
+    </section>
+
+    <main class="container">
+        <section class="admission-section">
+            <h2 class="section-title">Eligibility Criteria</h2>
+            <table class="luxury-table">
+                <thead>
+                    <tr>
+                        <th>Program</th>
+                        <th>Minimum Requirement</th>
+                        <th>Entrance Exam</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BS Computer Science</td>
+                        <td>60% in Intermediate (Pre-Eng)</td>
+                        <td>University Aptitude Test</td>
+                    </tr>
+                    <tr>
+                        <td>MS Data Science</td>
+                        <td>CGPA 3.0/4.0 in Computing</td>
+                        <td>GAT Subjective</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="admission-section">
+            <h2 class="section-title">Application Journey</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-num">01</span>
+                    <h3>Online Portal</h3>
+                    <p>Create your account on the official university admission portal.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">02</span>
+                    <h3>Document Submission</h3>
+                    <p>Upload certified copies of your transcripts and identity documents.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">03</span>
+                    <h3>Interview</h3>
+                    <p>Shortlisted candidates will be invited for a technical interview.</p>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="#" class="btn btn-primary">Download Brochure</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 University Computer Science Dept. | Designed for Excellence</p>
+    </footer>
+
 </body>
 </html>
