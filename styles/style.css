@@ -375,3 +375,86 @@ footer {
     opacity: 0.8;
     line-height: 1.5;
 }
+/* Faculty Grid Layout */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+/* Faculty Card Design */
+.faculty-card {
+    background: var(--white);
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.faculty-card:hover {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-color: var(--gold);
+}
+
+.faculty-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.faculty-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.faculty-card:hover .faculty-image img {
+    transform: scale(1.05);
+}
+
+.faculty-info {
+    padding: 30px;
+}
+
+.designation {
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.faculty-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.specialization {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.office-hours {
+    background: var(--off-white);
+    padding: 15px;
+    border-left: 3px solid var(--gold);
+}
+
+.office-hours strong {
+    font-size: 0.8rem;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.office-hours p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
