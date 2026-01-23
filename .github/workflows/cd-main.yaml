@@ -1,14 +1,14 @@
-name: cd-release
+name: cd-main
 on:
   push:
     branches:
-      - release
+      - main
 jobs:
   dev-dep-job:
-    environment: "release"
+    environment: "main"
     runs-on: ubuntu-latest
     steps:
       - name: Deployment Job
         run: echo "Deployed on Render"
       - name: Message to Render
-        run: curl -X POST ${{secrets.RENDER_CALLBACK_URL_RELEASE}}
+        run: curl -X POST ${{secrets.RENDER_CALLBACK_URL_MAIN}}
