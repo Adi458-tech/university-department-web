@@ -1,5 +1,9 @@
-FROM nginx:alpine
+FROM node:alpine AS build-stage
+WORKDIR /app
+COPY package*.json .
+RUN npm install
+COPY . .
+RUN npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./" --no-cache
 
-COPY dist/ /usr/share/nginx/html
-
-EXPOSE 80
+FROM nginx:alpine AS deploy-stage
+COPY --from=build-stage /app/dist/ /usr/share/nginx/html
