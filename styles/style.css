@@ -532,3 +532,91 @@ footer {
         flex-direction: column;
     }
 }
+/* Research Page Layout */
+.research-intro {
+    margin-bottom: 100px;
+}
+
+.areas-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.area-item {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.area-icon {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    opacity: 0.6;
+    line-height: 1;
+}
+
+.area-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.area-text p {
+    color: var(--text-gray);
+}
+
+/* Labs Grid */
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.lab-card {
+    background: var(--navy);
+    color: var(--white);
+    padding: 50px 40px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.lab-card.gold-border {
+    border-top: 5px solid var(--gold);
+}
+
+.lab-card:hover {
+    background: #112240;
+    transform: translateY(-5px);
+}
+
+.lab-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--gold);
+}
+
+.lab-card p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.lab-lead {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--white);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 15px;
+    display: block;
+}
